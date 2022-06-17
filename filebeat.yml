@@ -12,7 +12,7 @@ filebeat.inputs:
   enabled: true
   paths:
   - /var/logs/nginx/*.log
-#    - ${INPUT_PATH:/volume/*.log}
+  - ${INPUT_PATH:/volume/*.log}
 
 # processors:
 # - add_cloud_metadata:
