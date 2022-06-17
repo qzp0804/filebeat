@@ -1,7 +1,7 @@
 filebeat.config:
-  prospectors:
-    path: ${path.config}/prospectors.d/*.yml
-    reload.enabled: true
+#  prospectors:
+#    path: ${path.config}/prospectors.d/*.yml
+#    reload.enabled: true
   modules:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: true
