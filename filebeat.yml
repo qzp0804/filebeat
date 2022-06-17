@@ -13,8 +13,8 @@ filebeat.inputs:
   paths:
   - ${INPUT_PATH:/volume/*.log}
 
-# processors:
-# - add_cloud_metadata:
+processors:
+- add_cloud_metadata:
 
 # elasticsearch output info
 output.elasticsearch:
@@ -31,22 +31,22 @@ setup.kibana:
   username: "${ES_USERNAME:elastic}"
   password: "${ES_PASS:changeme}"
 
-# setup.template.enabled: true
+setup.template.enabled: true
 
 # if you change output.elasticsearch you have to change this two settings
 # setup.template.name: "${INDEX_NAME:filebeat}"
 # setup.template.pattern: "${INDEX_NAME:filebeat}-*"
 
 # enable dashboards
-# setup.dashboards.enabled: true
-# setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
-# setup.dashboards.retry.enabled: true
-# setup.dashboards.retry.interval: 3
-# setup.dashboards.retry.maximum: 20
+setup.dashboards.enabled: true
+setup.dashboards.index: "${INDEX_NAME:filebeat}-*"
+setup.dashboards.retry.enabled: true
+setup.dashboards.retry.interval: 3
+setup.dashboards.retry.maximum: 20
 
 # enable modules
-# filebeat.modules:
-# - module: nginx
-# - module: mysql
-# - module: apache2
-# - module: mongodb
+filebeat.modules:
+- module: nginx
+- module: mysql
+- module: apache2
+- module: mongodb
